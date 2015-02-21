@@ -20,6 +20,7 @@ public class xvmFile {
 		for (int i = 0; i < fileList.size(); i++){
 			fileContents.put(fileList.get(i).getName(),i);
 			
+			
 		}
 		
 		
