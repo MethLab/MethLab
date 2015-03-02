@@ -56,7 +56,7 @@ public class xvmTag {
 			
 		} while (braceLeft != braceRight);
 		
-		return stringToParse.indexOf(tag) + tag.length();
+		return stringToParse.indexOf(tag) + tag.length(); 
 		
 		
 		
