@@ -40,10 +40,12 @@ public class xvmTag {
 	public int isMainTag(ArrayList<String> dataToParse, String tag){
 		int braceLeft = 0;
 		int braceRight = 0;
+		
+		String stringToParse = this.toString(dataToParse);
 		char[] charContentArray = this.toString(dataToParse).toCharArray();
 		
 		
-		for (int i = dataToParse.indexOf(tag) + tag.length();i < charContentArray.length;i++){
+		for (int i = stringToParse.indexOf(tag) + tag.length();i < charContentArray.length;i++){
 			System.out.print(charContentArray[i]);
 			
 		}
@@ -54,7 +56,7 @@ public class xvmTag {
 			
 		} while (braceLeft != braceRight);
 		
-		return dataToParse.indexOf(tag) ;//+ tag.length();
+		return stringToParse.indexOf(tag) + tag.length();
 		
 		
 		
