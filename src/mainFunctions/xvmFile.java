@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class xvmFile {
 	
-	public HashMap<String,String> fileContents = new HashMap<String,String>();
+	public HashMap<String,ArrayList<String>> fileContents = new HashMap<String,ArrayList<String>>();
 	public ArrayList<File> fileList = new ArrayList<File>();
 	
 	private Set xvmSet;
@@ -25,6 +25,7 @@ public class xvmFile {
 	public xvmFile(String path) throws IOException{
 		File file = new File(path);
 
+//		Listet alle Dateien in Verzeichnis auf >> fileList
 		Collections.addAll(fileList, file.listFiles());
 		
 		for (int i = 0; i < fileList.size(); i++){
@@ -45,16 +46,17 @@ public class xvmFile {
 	}
 	
 //	conf-File lesen	
-	private String readFileAtOnce(String absolutePath) throws IOException{
+	public ArrayList<String> readFileAtOnce(String absolutePath) throws IOException{
+		
+		ArrayList<String> bufferList = new ArrayList<String>();
 		BufferedReader xvmReader = new BufferedReader(new FileReader(absolutePath));
 		String bufferString = new String("");
-		String returnString = new String("");
 		
 		while((bufferString = xvmReader.readLine())!= null ){
-			returnString += bufferString;
+			bufferList.add(bufferString);
 		}
 		xvmReader.close();
-		return returnString;	
+		return bufferList;	
 	}
 
 }
