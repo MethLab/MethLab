@@ -38,7 +38,7 @@ public class xvmFile {
 		this.xvmSet = fileContents.entrySet();
 		this.iterHashMap = xvmSet.iterator();
 		
-		while(iterHashMap.hasNext()){
+		while(iterHashMap.hasNext()){ 
 			xvmHashMapEntry = (Map.Entry)iterHashMap.next();
 			System.out.println(xvmHashMapEntry.getKey()+": ");
 			System.out.println(xvmHashMapEntry.getValue());
